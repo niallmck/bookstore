@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
- ! Excerpted from "Stripes: and Java Web Development is Fun Again",
- ! published by The Pragmatic Bookshelf.
- ! Copyrights apply to this code. It may not be used to create training material, 
- ! courses, books, articles, and the like. Contact us if you are in doubt.
- ! We make no guarantees that this code is fit for any purpose. 
- ! Visit http://www.pragmaticprogrammer.com/titles/fdstr for more book information.
--->
+
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
@@ -21,6 +14,18 @@
       <param-name>ActionResolver.Packages</param-name><!-- (2) -->
       <param-value>ie.books.action</param-value>
     </init-param>
+    
+    
+    <init-param>
+      <param-name>Extension.Packages</param-name>
+      <param-value>
+        stripesbook.ext,
+        org.stripesstuff.stripersist,
+        net.sourceforge.stripes.integration.spring
+      </param-value>
+    </init-param>
+    
+    
   </filter>
 
   <servlet><!-- (3) -->
