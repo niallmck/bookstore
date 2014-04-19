@@ -1,0 +1,162 @@
+body{
+	font-family: 'Chaparral Pro';
+	margin: 0;
+	padding: 0;
+	background: url('img/pw_maze_white.png');
+}
+
+h2{
+	font-weight: normal;
+	color: #222;
+	margin-top: 0;
+}
+#header{
+	width: 100%;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	background: #ddd;
+	background: rgba(0,0,0,0.4);
+	border-bottom: solid 1px #ccc;
+}
+
+#headerContent{
+	width: 960px;
+	margin: 0 auto;
+}
+
+#header img{
+	height: 80px;
+	margin: 10px 0;
+	float: left;
+}
+
+#searchBar{
+	float: left;
+}
+
+#searchBar form{
+	margin: 0;
+	line-height: 100px;
+}
+
+#searchBar input[type=text]{
+	width: 300px;
+	border: 6px solid #464646;
+	height: 36px;
+	margin: 0;
+	border-radius: 4px 0 0 4px;
+	margin-left: 64px;
+}
+
+#searchBar input[type=submit]{
+	width: 100px;
+	height: 36px;
+	margin: 0;
+	background: #464646;
+	color: #fff;
+	border: none;
+	font-weight: bold;
+	border-radius: 0 4px 4px 0;
+	border-left: 1px solid #666;
+	cursor: pointer;
+}
+
+#searchBar input[type=submit]:hover, #accountSection a:hover{
+	background: #333;
+	color: #ff9c00;
+}
+#accountSection{
+	float: right;
+	width: 240px;
+	height: 100px;
+}
+#accountSection a{
+	margin-top: 32px;
+	display: inline-block;
+	width: 100px;
+	height: 36px;
+	line-height: 36px;
+	background: #464646;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+}
+#signUp{
+	border-radius: 4px 0 0 4px;
+	border-right: 1px solid #666;
+}
+#logIn{
+	border-radius: 0 4px 4px 0;
+}
+
+
+
+
+
+#container{
+	width: 960px;
+	margin: 32px auto;
+	min-height: 320px;
+}
+
+#navSidebar{
+	float: left;
+	min-height: 320px;
+	width: 180px;
+}
+
+#navSidebar ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 16px;
+}
+#navSidebar a{
+	padding-left: 32px;
+	text-decoration: none;
+	display: block;
+	background: #464646;
+	color: #fff;
+	height: 36px;
+	line-height: 36px;
+	border-bottom: 1px solid #666;
+}
+#navSidebar a:hover{
+	background: #333;
+	color: #ff9c00;
+}
+
+#content{
+	float: left;
+	min-height: 320px;
+	width: 568px;
+	margin: 0 16px;
+}
+
+#books ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#books li{
+	display: inline-block;
+	height: 160px;
+	width: 100px;
+	background: #464646;
+	padding: 0;
+	margin: 0;
+	margin-right: 17px;
+	margin-bottom: 17px;
+}
+#books li:nth-child(5){
+	margin-right: 0;
+}
+
+#promoSidebar{
+	float: right;
+	min-height: 320px;
+	width: 180px;
+	background: rgba(0,0,0,0.4);
+}
