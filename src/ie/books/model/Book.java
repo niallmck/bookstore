@@ -3,15 +3,86 @@ package ie.books.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Book extends ModelBase {
 	
-	@OneToMany(mappedBy="review")
-	private Set<Review> reviews;
-	@ManyToMany(mappedBy="saleItem")
-	private Set<Sale> sales;
+	private String title;
+	private String author;
+	private double price;
+	private String imageUrl;
+	private int stock;
+	
+	
+	@OneToMany(mappedBy="book")
+	private Set<SaleItem> saleItems;
 
+	
+	@OneToMany(mappedBy="book")
+	private Set<Review> reviews;
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public String getAuthor() {
+		return author;
+	}
+
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+
+	public int getStock() {
+		return stock;
+	}
+
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+
+
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
+	}
+	
+
+	
+	
 }

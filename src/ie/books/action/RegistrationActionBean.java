@@ -32,6 +32,7 @@ public class RegistrationActionBean extends BaseActionBean implements Validation
     }
     public Resolution save() {
         customerDao.save(customer);
+        customerDao.commit();
         return new RedirectResolution(getClass(), "done");
     }
     @DontValidate
