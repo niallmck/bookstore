@@ -39,6 +39,10 @@ public class RegistrationActionBean extends BaseActionBean implements Validation
     public Resolution done() {
         return new ForwardResolution(DONE);
     }
+    @DontValidate
+    public Resolution cancel() {
+        return new RedirectResolution(LoginActionBean.class);
+    }
     
     @ValidateNestedProperties({
     	@Validate(field="firstName" , required=true),
@@ -70,6 +74,7 @@ public class RegistrationActionBean extends BaseActionBean implements Validation
     @ValidationMethod
     public void validateUsernameAndPasswords(ValidationErrors errors){
         String email = customer.getEmail();
+        
         if (customerDao.findByEmail(email) != null) {
             errors.addGlobalError(
                 new SimpleError("An account for " + email + " already exists."));
@@ -78,14 +83,17 @@ public class RegistrationActionBean extends BaseActionBean implements Validation
             errors.addGlobalError(
                 new SimpleError("The passwords do not match."));
         }
+        
     }
 
 	@Override
 	public Resolution handleValidationErrors(ValidationErrors errors) {
+		
 		if (errors.hasFieldErrors()) {
             errors.addGlobalError(
                 new SimpleError("All fields are required."));
         }
+        
         return null;
 	}
     

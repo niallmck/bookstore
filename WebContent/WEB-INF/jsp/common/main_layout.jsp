@@ -22,10 +22,22 @@
 			</div>
 	
 			<div id="accountSection">
-				<a href="" id="logIn">Log In</a>
-				<s:link id="signUp" beanclass="ie.books.action.RegistrationActionBean">
-					Sign Up
-				</s:link>
+				
+				
+				<c:choose>
+					<c:when test="${actionBean.context.admin != null}">
+						<s:link id="logOut" beanclass="ie.books.action.LogoutActionBean">Log Out</s:link>
+						<s:link id="myAccount" beanclass="ie.books.action.AdminActionBean">Admin</s:link>
+					</c:when>
+					<c:when test="${actionBean.context.customer == null}">
+						<s:link id="logIn" beanclass="ie.books.action.LoginActionBean">Log In</s:link>
+						<s:link id="signUp" beanclass="ie.books.action.RegistrationActionBean">Sign Up</s:link>
+					</c:when>
+					<c:otherwise>
+						<s:link id="logOut" beanclass="ie.books.action.LogoutActionBean">Log Out</s:link>
+						<s:link id="myAccount" beanclass="ie.books.action.AccountActionBean">${actionBean.context.customer.firstName}</s:link>
+					</c:otherwise>
+				</c:choose>
 			</div>
 			</div>
 		</div>

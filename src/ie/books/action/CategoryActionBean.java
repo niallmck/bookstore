@@ -1,7 +1,8 @@
 package ie.books.action;
 
+import java.util.List;
 
-import ie.books.model.Book;
+import ie.books.model.Category;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.DontValidate;
 import net.sourceforge.stripes.action.ForwardResolution;
@@ -12,9 +13,9 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
 import net.sourceforge.stripes.validation.ValidationErrorHandler;
 import net.sourceforge.stripes.validation.ValidationErrors;
 
-public class BookActionBean extends BaseActionBean implements ValidationErrorHandler {
-	
-    private static final String VIEW = "/WEB-INF/jsp/books.jsp";
+public class CategoryActionBean extends BaseActionBean implements ValidationErrorHandler {
+
+	private static final String VIEW = "/WEB-INF/jsp/books.jsp";
     private static final String DONE = "/WEB-INF/jsp/books.jsp";
     
     @DefaultHandler
@@ -23,12 +24,12 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
         return new ForwardResolution(VIEW);
     }
     
-    public Resolution register() {
+    public Resolution addCategory() {
         return save();
     }
     public Resolution save() {
-        bookDao.save(book);
-        bookDao.commit();
+        categoryDao.save(category);
+        categoryDao.commit();
         return new RedirectResolution(getClass(), "done");
     }
     @DontValidate
@@ -41,27 +42,27 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     }
     
     @ValidateNestedProperties({
-    	@Validate(field="title" , required=true),
-    	@Validate(field="author" , required=true),
-    	@Validate(field="price" , required=true),
-    	@Validate(field="imageUrl" , required=true),
-    	@Validate(field="quantity" , required=true),
-    	@Validate(field="category" , required=true)
+    	@Validate(field="name" , required=true),
     })
-    private Book book;
+    private Category category;
     
-    public Book getBook(){
-    	return book;
+    public Category getCategory(){
+    	return category;
     }
     
-    public void setBook(Book book){
-    	this.book = book;
+    public void setCategory(Category category){
+    	this.category = category;
     }
-
+    
+    public List<Category> getCategories(){
+    	return categoryDao.read();
+    }
+	
 	@Override
 	public Resolution handleValidationErrors(ValidationErrors arg0)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

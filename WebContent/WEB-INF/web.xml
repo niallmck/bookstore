@@ -27,6 +27,10 @@
       <param-value>ie.books.action</param-value>
     </init-param>
     
+    <init-param>
+    	<param-name>ActionBeanContext.Class</param-name>
+    	<param-value>ie.books.ext.MyActionBeanContext</param-value>
+	</init-param>
     
     <init-param>
       <param-name>Extension.Packages</param-name>

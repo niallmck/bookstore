@@ -21,7 +21,7 @@
       <property name="hibernate.archive.autodetection" value="class"/>
 
       <!-- Automatically create the SQL schema -->
-      <property name="hibernate.hbm2ddl.auto" value="create"/>
+       <!--  <property name="hibernate.hbm2ddl.auto" value="create"/>-->
 
       <!-- Tell Hibernate to use MYSQLDB -->
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>

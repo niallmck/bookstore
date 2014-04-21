@@ -83,11 +83,11 @@ h2{
 	text-decoration: none;
 	float: right;
 }
-#signUp{
+#signUp, #myAccount{
 	border-radius: 4px 0 0 4px;
 	border-right: 1px solid #666;
 }
-#logIn{
+#logIn, #logout{
 	border-radius: 0 4px 4px 0;
 }
 

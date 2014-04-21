@@ -3,6 +3,7 @@ package ie.books.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -21,6 +22,9 @@ public class Book extends ModelBase {
 	
 	@OneToMany(mappedBy="book")
 	private Set<Review> reviews;
+	
+	@ManyToOne
+	private Category category;
 
 
 	public String getTitle() {
