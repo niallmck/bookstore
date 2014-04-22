@@ -3,6 +3,7 @@ package ie.books.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -25,7 +26,6 @@ public class Book extends ModelBase {
 	
 	@ManyToOne
 	private Category category;
-
 
 	public String getTitle() {
 		return title;
@@ -105,10 +105,10 @@ public class Book extends ModelBase {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
-	
-	
 
+	public String getDisplayPrice(){
+		return String.format("%10.2f", price);
+	}
 	
 	
 }

@@ -63,13 +63,13 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	bookId = id;
     }
     
-    public Book getBook(){
+    public Book getBookDetails(){
     	return bookDao.read(bookId);
     }
-    /*
+    
     public Book getBook(){
     	return book;
-    }*/
+    }
     
     public void setBook(Book book){
     	this.book = book;

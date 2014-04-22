@@ -1,6 +1,7 @@
 package ie.books.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ public class Sale extends ModelBase{
 	private Customer customer;
 	
 	@OneToMany(mappedBy="sale")
-	private Set<SaleItem> items;
+	private List<SaleItem> items;
 
 	public Date getPurchaseDate() {
 		return purchaseDate;
@@ -34,12 +35,16 @@ public class Sale extends ModelBase{
 		this.customer = customer;
 	}
 
-	public Set<SaleItem> getItems() {
+	public List<SaleItem> getItems() {
 		return items;
 	}
 
-	public void setItems(Set<SaleItem> items) {
+	public void setItems(List<SaleItem> items) {
 		this.items = items;
+	}
+	
+	public void addItem(SaleItem item){
+		items.add(item);
 	}
 	
 	

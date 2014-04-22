@@ -9,10 +9,18 @@ import ie.books.dao.AdminDao;
 import ie.books.dao.BookDao;
 import ie.books.dao.CategoryDao;
 import ie.books.dao.CustomerDao;
+import ie.books.dao.ReviewDao;
+import ie.books.dao.SaleDao;
+import ie.books.dao.SaleItemDao;
+import ie.books.dao.ShoppingCartItemDao;
 import ie.books.dao.impl.stripersist.AdminDaoImpl;
 import ie.books.dao.impl.stripersist.BookDaoImpl;
 import ie.books.dao.impl.stripersist.CategoryDaoImpl;
 import ie.books.dao.impl.stripersist.CustomerDaoImpl;
+import ie.books.dao.impl.stripersist.ReviewDaoImpl;
+import ie.books.dao.impl.stripersist.SaleDaoImpl;
+import ie.books.dao.impl.stripersist.SaleItemDaoImpl;
+import ie.books.dao.impl.stripersist.ShoppingCartItemDaoImpl;
 import ie.books.ext.MyActionBeanContext;
 import ie.books.model.Customer;
 import net.sourceforge.stripes.action.ActionBean;
@@ -30,11 +38,13 @@ public abstract class BaseActionBean implements ActionBean {
     
     protected BookDao bookDao = new BookDaoImpl();
     protected CustomerDao customerDao = new CustomerDaoImpl();
-    //protected ReviewDao reviewDao = new ReviewDaoImpl();
-    //protected SaleDao messageDao = new SaleDaoImpl();
+    protected ReviewDao reviewDao = new ReviewDaoImpl();
+    protected SaleDao saleDao = new SaleDaoImpl();
+    protected SaleItemDao saleItemDao = new SaleItemDaoImpl();
     protected CategoryDao categoryDao = new CategoryDaoImpl();
     protected AdminDao adminDao = new AdminDaoImpl();
-    
+    protected ShoppingCartItemDao shoppingCartItemDao = new ShoppingCartItemDaoImpl();
+
     public Customer getCustomer(){
     	return getContext().getCustomer();
     }
