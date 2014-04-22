@@ -1,5 +1,7 @@
 package ie.books.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -19,6 +21,9 @@ public class Customer extends ModelBase {
 	
 	@OneToMany(mappedBy="customer")
 	private Set<Review> reviews;
+	
+	@OneToMany(mappedBy="customer")
+	private List<ShoppingCartItem> shoppingCart;// = new ArrayList<ShoppingCartItem>();
 	
 	
 	public String getFirstName() {
@@ -52,10 +57,43 @@ public class Customer extends ModelBase {
 		this.address = address;
 	}
 	
+	
+	public Set<Sale> getSales() {
+		return sales;
+	}
+	public void setSales(Set<Sale> sales) {
+		this.sales = sales;
+	}
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
+	}
+	public List<ShoppingCartItem> getShoppingCart() {
+		return shoppingCart;
+	}
+	public void setShoppingCart(List<ShoppingCartItem> shoppingCart) {
+		this.shoppingCart = shoppingCart;
+	}
+	
+	public void addToCart(ShoppingCartItem item){
+		shoppingCart.add(item);
+	}
+	
+	public void removeFromCart(ShoppingCartItem item) {
+		shoppingCart.remove(item);
+	}
+	
+	public void emptyCart(){
+		shoppingCart.clear();
+	}
+	
 	@Override
     public String toString() {
         return String.format("%s %s", firstName, lastName);        
     }
+	
 	
 	
 

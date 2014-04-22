@@ -34,6 +34,14 @@ public class Review extends ModelBase {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+	public Book getBook() {
+		return book;
+	}
+	public void setBook(Book book) {
+		this.book = book;
+	}
+	
+	
 
 	
 }
