@@ -3,7 +3,6 @@ package ie.books.ext;
 import javax.servlet.http.HttpSession;
 
 import net.sourceforge.stripes.action.ActionBeanContext;
-import ie.books.dao.CustomerDao;
 import ie.books.dao.impl.stripersist.AdminDaoImpl;
 import ie.books.dao.impl.stripersist.CustomerDaoImpl;
 import ie.books.model.Admin;

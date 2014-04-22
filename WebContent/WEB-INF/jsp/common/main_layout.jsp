@@ -10,9 +10,10 @@
 		<title>Welcome to Books.ie</title>
 	</head>
 	<body>
+	<div id="mainContainer">
 		<div id="header">
 			<div id="headerContent">
-			<img src="/Books/css/img/logo.png" alt="books.ie"/>
+			<a href="/Books/"><img src="/Books/css/img/logo.png" alt="books.ie"/></a>
 	
 			<div id="searchBar">
 				<form action="" method="post">
@@ -65,6 +66,22 @@
 				</s:layout-component>
 			</div><div id="promoSidebar">
 			<div style="clear:both;"></div>
+			</div>
+			</div>
+			<div id="footer">
+			<s:link beanclass="ie.books.action.AdminActionBean">Admin</s:link>
+			<c:choose>
+					<c:when test="${actionBean.context.admin != null}">
+						<s:link beanclass="ie.books.action.LogoutActionBean">Log Out</s:link>
+					</c:when>
+					<c:when test="${actionBean.context.customer != null}">
+						<s:link beanclass="ie.books.action.LogoutActionBean">Log Out</s:link>
+					</c:when>
+					<c:otherwise>
+						<s:link beanclass="ie.books.action.LoginActionBean">Log In</s:link>
+						<s:link beanclass="ie.books.action.RegistrationActionBean">Sign Up</s:link>
+					</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</body>

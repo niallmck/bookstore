@@ -85,6 +85,28 @@ public class Book extends ModelBase {
 	public void setReviews(Set<Review> reviews) {
 		this.reviews = reviews;
 	}
+
+
+	public Set<SaleItem> getSaleItems() {
+		return saleItems;
+	}
+
+
+	public void setSaleItems(Set<SaleItem> saleItems) {
+		this.saleItems = saleItems;
+	}
+
+
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
 	
 
 	

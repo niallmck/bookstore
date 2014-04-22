@@ -26,7 +26,7 @@
 			
 			<s:label for="customer.address">Address</s:label>
 			<s:text name="customer.address" value="${actionBean.context.customer.address}"/>
-			
+			<br>
 			<s:submit name="update" value="Save Changes"/>
 		</s:form>
 	</s:layout-component>

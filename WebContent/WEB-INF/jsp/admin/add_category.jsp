@@ -8,7 +8,7 @@
 		<s:form beanclass="ie.books.action.CategoryActionBean">
 			<s:label for="category.name">Category</s:label>
 			<s:text name="category.name"/>
-			
+			<br>
 			<s:submit name="addCategory" value="Add Category"/>
 		</s:form>
 	</s:layout-component>

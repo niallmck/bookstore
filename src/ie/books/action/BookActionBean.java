@@ -41,12 +41,14 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     }
     
     @ValidateNestedProperties({
+    	
     	@Validate(field="title" , required=true),
     	@Validate(field="author" , required=true),
     	@Validate(field="price" , required=true),
     	@Validate(field="imageUrl" , required=true),
-    	@Validate(field="quantity" , required=true),
+    	@Validate(field="stock" , required=true),
     	@Validate(field="category" , required=true)
+    	
     })
     private Book book;
     

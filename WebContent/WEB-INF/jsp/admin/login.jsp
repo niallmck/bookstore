@@ -13,7 +13,7 @@
 			
 			<s:label for="password">Password</s:label>
 			<s:password name="password" value="admin"/>
-					
+					<br>
 			<s:submit name="login" value="Log In"/>
 		</s:form>
 	</s:layout-component>

@@ -44,14 +44,23 @@ public class CategoryActionBean extends BaseActionBean implements ValidationErro
     @ValidateNestedProperties({
     	@Validate(field="name" , required=true),
     })
+    
     private Category category;
     
-    public Category getCategory(){
-    	return category;
-    }
     
     public void setCategory(Category category){
     	this.category = category;
+    }
+    
+    
+    private int categoryId;
+    
+    public void setCategoryId(int id){
+    	categoryId = id;
+    }
+    
+    public Category getCategory(){
+    	return categoryDao.read(categoryId);
     }
     
     public List<Category> getCategories(){

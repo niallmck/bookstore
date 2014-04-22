@@ -19,15 +19,17 @@
 			<s:label for="book.imageUrl">Image Url</s:label>
 			<s:text name="book.imageUrl"/>
 			
-			<s:label for="book.quantity">Quantity</s:label>
-			<s:text name="book.quantity"/>
-			
+			<s:label for="book.stock">Stock</s:label>
+			<s:text name="book.stock"/>
+
 			<s:label for="book.category">Category</s:label>	
 			<select name="book.category">
 			<c:forEach var="category" items="${categoryBean.categories}">
-				<option value="${category}">${category.name}</option>
+				<option value="${category.id}">${category.name}</option>
 			</c:forEach>
 			</select>
+
+			<br>
 
 			<s:submit name="register" value="Add Book"/>
 		</s:form>
