@@ -186,16 +186,31 @@ h2{
 
 #books li{
 	display: inline-block;
-	height: 160px;
-	width: 100px;
-	background: #464646;
+	width: 164px;
+	background: rgba(0,0,0,0.25);
 	padding: 0;
 	margin: 0;
 	margin-right: 17px;
 	margin-bottom: 17px;
+	text-align: center;
 }
-#books li:nth-child(5){
+#books li:nth-child(3){
 	margin-right: 0;
+}
+
+#books li img{
+	padding-top: 20px;"
+	width: 100px;
+	height: 150px;
+}
+
+#books li a{
+	text-decoration: none;
+	color: #333;
+}
+
+#books li:hover{
+	opacity: 0.75;
 }
 
 #promoSidebar{

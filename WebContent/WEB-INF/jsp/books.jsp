@@ -23,10 +23,13 @@
 			<h2>Featured Books</h2>
 			<ul>
 				<c:forEach var="book" items="${categoryBean.category.books}">
-				<li>
-				<s:link beanclass="ie.books.action.BookActionBean">
+				<li class="book">
+				<s:link beanclass="ie.books.action.BookActionBean" event="viewBook">
 					<s:param name="bookId" value="${book.id }"/>
-					${book.title}
+					<img src="${book.imageUrl}"/>
+					<p>${book.title}</p>
+					<p>by ${book.author}</p>
+					<p>${book.price}</p>
 				</s:link>
 				</li>
 			</c:forEach>

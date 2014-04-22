@@ -16,6 +16,7 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
 	
     private static final String VIEW = "/WEB-INF/jsp/books.jsp";
     private static final String DONE = "/WEB-INF/jsp/books.jsp";
+    private static final String VIEW_BOOK = "/WEB-INF/jsp/book_view.jsp";
     
     @DefaultHandler
     @DontValidate
@@ -30,6 +31,10 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
         bookDao.save(book);
         bookDao.commit();
         return new RedirectResolution(getClass(), "done");
+    }
+    @DontValidate
+    public Resolution viewBook(){
+    	return new ForwardResolution(VIEW_BOOK);
     }
     @DontValidate
     public Resolution done() {
@@ -52,9 +57,19 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     })
     private Book book;
     
+    private int bookId;
+    
+    public void setBookId(int id){
+    	bookId = id;
+    }
+    
+    public Book getBook(){
+    	return bookDao.read(bookId);
+    }
+    /*
     public Book getBook(){
     	return book;
-    }
+    }*/
     
     public void setBook(Book book){
     	this.book = book;
