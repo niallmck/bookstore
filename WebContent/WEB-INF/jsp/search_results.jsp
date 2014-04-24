@@ -56,7 +56,7 @@
 		<div id="books">
 			<h2>${actionBean.category.name}</h2>
 			<ul>
-				<c:forEach var="book" items="${actionBean.books}">
+				<c:forEach var="book" items="${actionBean.authorBooks}">
 				<li class="book">
 				<s:link beanclass="ie.books.action.BookActionBean" event="viewBook">
 					<s:param name="bookId" value="${book.id }"/>

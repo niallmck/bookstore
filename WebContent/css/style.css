@@ -2,8 +2,12 @@ body{
 	font-family: 'Chaparral Pro';
 	margin: 0;
 	padding: 0;
-	background: url('img/pw_maze_white.png');
+	background: url('img/bg.jpg');
 	height:100%;
+}
+
+h1, h2, h3{
+	color: rgba(0,0,0,0.75);
 }
 
 #mainContainer {
@@ -17,7 +21,8 @@ body{
    width:100%;
    text-align: center;
    height:60px;
-   background: rgba(0,0,0,0.4);
+   background: rgba(255,255,255,0.4);
+	border-top: solid 1px rgba(255,255,255,0.15);
 }
 
 #footer span{
@@ -27,13 +32,17 @@ body{
 #footer a{
 	line-height: 60px;
 	color: rgba(0,0,0,0.65);
-	margin: 0 8px;
+	margin: 0 1px;
 	text-decoration: none;
 	font-size: 1.15em;
+	background: rgba(255,255,255,0.65);
+	padding: 8px;
+	width: 160px;
 }
 
 #footer a:hover{
-	color: rgba(255,255,255,0.95);
+	background: rgba(0,0,0,0.75);
+	color: #ff9c00;
 }
 
 label{
@@ -57,8 +66,8 @@ h2{
 	margin: 0;
 	padding: 0;
 	background: #ddd;
-	background: rgba(0,0,0,0.4);
-	border-bottom: solid 1px #ccc;
+	background: rgba(255,255,255,0.4);
+	border-bottom: solid 1px rgba(255,255,255,0.15);
 }
 
 #headerContent{
@@ -87,7 +96,8 @@ h2{
 
 #searchBar input[type=text]{
 	width: 300px;
-	border: 6px solid #464646;
+	background: rgba(255,255,255,0.5);
+	border: 6px solid rgba(0,0,0,0.65);
 	height: 36px;
 	margin: 0;
 	border-radius: 4px 0 0 4px;
@@ -99,6 +109,7 @@ h2{
 	height: 36px;
 	margin: 0;
 	background: #464646;
+	background: rgba(0,0,0,0.5);
 	color: #fff;
 	border: none;
 	font-weight: bold;
@@ -109,6 +120,7 @@ h2{
 
 #searchBar input[type=submit]:hover, #accountSection a:hover{
 	background: #333;
+	background: rgba(0,0,0,0.75);
 	color: #ff9c00;
 }
 #accountSection{
@@ -123,6 +135,7 @@ h2{
 	height: 36px;
 	line-height: 36px;
 	background: #464646;
+	background: rgba(0,0,0,0.5);
 	color: #fff;
 	text-align: center;
 	text-decoration: none;
@@ -163,13 +176,14 @@ h2{
 	text-decoration: none;
 	display: block;
 	background: #464646;
+	background: rgba(0,0,0,0.5);
 	color: #fff;
 	height: 36px;
 	line-height: 36px;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 #navSidebar a:hover{
-	background: #333;
+	background: rgba(0,0,0,0.75);
 	color: #ff9c00;
 }
 
@@ -221,7 +235,7 @@ h2{
 	float: right;
 	min-height: 320px;
 	width: 180px;
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.5);
 }
 
 
@@ -230,7 +244,7 @@ h2{
 }
 
 .review{
-	background: rgba(0,0,0,0.05);
+	background: rgba(255,255,255,0.75);
 	padding: 8px;
 	margin-bottom: 16px;
 }
@@ -262,7 +276,7 @@ h2{
 #bookDetails span{
 	margin-top: 0;
 	margin-bottom: 8px;
-	color: #bbb;
+	color: rgba(0,0,0,0.5);
 	padding-top: 1px;
 }
 
@@ -271,7 +285,7 @@ h2{
 	margin-top: 8px;
 	margin-bottom: 0px;
 	padding-bottom: 2px;
-	border-bottom: 1px solid #bbb;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
 }
 
 #bookDetails a{
@@ -333,4 +347,34 @@ h2{
 
 .bookItem a:hover{
 	background: #dc8100;
+}
+
+#sortBar span{
+	margin-right: 8px;
+}
+
+#sortBar a{
+	top: 2px;
+	position: relative;
+	opacity: 0.5;
+}
+
+#sortBar a:hover{
+	opacity: 0.95;
+}
+
+
+#sortBar p{
+	width: 132px;
+	margin-right: 17px;
+	text-align: center;
+	background: rgba(0,0,0,0.65);
+	padding: 4px 16px;
+	line-height: 30px;
+	display: inline-block;
+	color: rgba(255,255,255,0.75);
+}
+
+#sortBar p:nth-child(3){
+	margin-right: 0;
 }

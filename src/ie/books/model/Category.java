@@ -1,5 +1,6 @@
 package ie.books.model;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ public class Category extends ModelBase{
 	private String name;
 
 	@OneToMany(mappedBy="category")
-	private Set<Book> books;
+	private List<Book> books;
 
 	public String getName() {
 		return name;
@@ -21,11 +22,11 @@ public class Category extends ModelBase{
 		this.name = name;
 	}
 
-	public Set<Book> getBooks() {
+	public List<Book> getBooks() {
 		return books;
 	}
 
-	public void setBooks(Set<Book> books) {
+	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
 	
