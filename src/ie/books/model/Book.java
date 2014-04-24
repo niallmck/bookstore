@@ -110,5 +110,20 @@ public class Book extends ModelBase {
 		return String.format("%10.2f", price);
 	}
 	
+	public String getAverageRating(){
+		if (reviews.isEmpty()){
+			return "No reviews received";
+		}
+		else{
+			int total = 0;
+			for (Review review: reviews){
+				total += review.getRating(); 
+			}
+			double average = (double) total / (double) reviews.size();
+			return String.format("%10.1f", average) + " out of 5 Stars";
+		}
+	}
+	
+
 	
 }

@@ -42,7 +42,7 @@ public class CategoryActionBean extends BaseActionBean implements ValidationErro
     }
     
     @ValidateNestedProperties({
-    	@Validate(field="name" , required=true),
+    	@Validate(field="name" , required=true)
     })
     
     private Category category;

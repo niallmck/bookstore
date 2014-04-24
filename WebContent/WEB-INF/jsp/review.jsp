@@ -1,12 +1,24 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp" %>
-<s:useActionBean beanclass="ie.books.action.CategoryActionBean" id="categoryBean"/>
 <s:layout-render name="/WEB-INF/jsp/common/main_layout.jsp">
 	<s:layout-component name="sidebar">
 		<%@include file="/WEB-INF/jsp/common/account_sidebar.jsp" %>
 	</s:layout-component>
 	<s:layout-component name="content">
-		<h1>Write a Review</h1>
-		<h2>${actionBean.book.title} by ${actionBean.book.author}</h2>
+	<h1>Write a Review</h1>
+	<div id="bookImage">
+		<img src="${actionBean.book.imageUrl}"/>
+	</div>
+	<div id="bookDetails">
+		<h3>${actionBean.book.title}</h3>
+		<span>Title</span>
+		<h3>${actionBean.book.author}</h3>
+		<span>Author</span>
+		<h3>${actionBean.book.displayPrice}</h3>
+		<span>Price</span>
+		<h3>${actionBean.book.averageRating}</h3>
+		<span>Average Rating</span>
+	</div>
+		
 		<s:form beanclass="ie.books.action.ReviewActionBean">
 			
 			<s:label for="review.rating">Rating</s:label>	
@@ -19,16 +31,17 @@
 			</select>
 			
 			<s:label for="review.message">Message</s:label>
-			<s:text name="review.message"/>
+			<s:textarea name="review.message"/>
 			
-			<input name="review.book" type="hidden" value="${actionBean.book.id }" />
-			<input name="review.customer" type="hidden" value="${actionBean.context.customer.id }" />
-			
+			<s:hidden name="review.book"
+			value="${actionBean.book.id }" />
+			<s:hidden name="review.customer"  
+			value="${actionBean.context.customer.id }" />
 			
 
 			<br>
 
-			<s:submit name="review" value="Submit Review"/>
+			<s:submit name="submit" value="Submit Review"/>
 		</s:form>
 	</s:layout-component>
 </s:layout-render>

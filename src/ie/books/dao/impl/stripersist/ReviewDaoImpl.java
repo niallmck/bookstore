@@ -6,8 +6,5 @@ import ie.books.model.Review;
 
 public class ReviewDaoImpl extends BaseDaoImpl<Review, Integer> implements ReviewDao{
 
-	public Review findByBook(Book book) {
-		return findBy("book", book);
-	}
 
 }

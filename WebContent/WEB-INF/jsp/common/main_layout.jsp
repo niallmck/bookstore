@@ -70,6 +70,7 @@
 			</div>
 			</div>
 			<div id="footer">
+			<span>
 			<s:link beanclass="ie.books.action.AdminActionBean">Admin</s:link>
 			<c:choose>
 					<c:when test="${actionBean.context.admin != null}">
@@ -84,6 +85,7 @@
 						<s:link beanclass="ie.books.action.RegistrationActionBean">Sign Up</s:link>
 					</c:otherwise>
 				</c:choose>
+			</span>
 			</div>
 		</div>
 	</body>

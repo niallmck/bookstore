@@ -1,6 +1,5 @@
 package ie.books.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -87,6 +86,10 @@ public class Customer extends ModelBase {
 	
 	public void emptyCart(){
 		shoppingCart.clear();
+	}
+	
+	public String getFullName(){
+		return firstName + " " + lastName;
 	}
 	
 	@Override

@@ -7,6 +7,7 @@ import net.sourceforge.stripes.action.DontValidate;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.validation.SimpleError;
 import net.sourceforge.stripes.validation.Validate;
 import net.sourceforge.stripes.validation.ValidateNestedProperties;
 import net.sourceforge.stripes.validation.ValidationErrorHandler;
@@ -75,10 +76,13 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	this.book = book;
     }
 
-	@Override
-	public Resolution handleValidationErrors(ValidationErrors arg0)
-			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+    @Override
+	public Resolution handleValidationErrors(ValidationErrors errors) throws Exception {
+		if (errors.hasFieldErrors()) {
+			errors.addGlobalError(
+			new SimpleError("All fields are required." ));
+			}
+			return null;
 	}
+	
 }

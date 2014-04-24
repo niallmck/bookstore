@@ -14,10 +14,14 @@ body{
 #footer {
    position:absolute;
    bottom:0;
-   width:40%;
-   padding: 0 30%;
+   width:100%;
+   text-align: center;
    height:60px;
    background: rgba(0,0,0,0.4);
+}
+
+#footer span{
+	margin: 0 auto;
 }
 
 #footer a{
@@ -218,4 +222,115 @@ h2{
 	min-height: 320px;
 	width: 180px;
 	background: rgba(0,0,0,0.4);
+}
+
+
+#reviews{
+	margin: 32px 0;
+}
+
+.review{
+	background: rgba(0,0,0,0.05);
+	padding: 8px;
+	margin-bottom: 16px;
+}
+
+.review h2 span{
+	display: inline-block;
+	width: 125px;
+	background: url('img/stars_bg.png');
+}
+
+.review p{
+	margin: 0;
+	font-style: italic;
+}
+
+#bookImage, #bookDetails{
+	display: inline-block;
+	width: 49%;
+}
+#bookImage {
+	text-align: center;
+}
+
+#bookDetails{
+	float: right;
+}
+
+
+#bookDetails span{
+	margin-top: 0;
+	margin-bottom: 8px;
+	color: #bbb;
+	padding-top: 1px;
+}
+
+#bookDetails h3{
+	font-weight: normal;
+	margin-top: 8px;
+	margin-bottom: 0px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #bbb;
+}
+
+#bookDetails a{
+	display: block;
+	width: 90%;
+	color: #fff;
+	padding: 5%;
+	text-align: center;
+	background: #fe9b0e;
+	text-decoration: none;
+	border-radius: 4px;
+	margin-top: 16px;
+}
+
+#bookDetails a:hover{
+	background: #dc8100;
+}
+
+
+.bookItem{
+	width: 41%;
+	padding: 2%;
+	background: rgba(0,0,0,0.05);
+	display: inline-block;
+	margin: 2%;
+	position: relative;
+}
+
+.bookItem img{
+	width: 30%;
+
+}
+
+.bookItem div{
+	width: 65%;
+	display: inline-block;
+	float: right;
+}
+
+.bookItem div p{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 4px;
+}
+
+.bookItem a{
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+	color: #fff;
+	padding: 8px;
+	text-align: center;
+	background: #fe9b0e;
+	text-decoration: none;
+	border-radius: 4px;
+	bottom: 12px;
+	position: absolute;
+}
+
+.bookItem a:hover{
+	background: #dc8100;
 }

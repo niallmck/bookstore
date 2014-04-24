@@ -7,11 +7,17 @@
 		<h1>Your Books</h1>
 		<c:forEach var="sale" items="${actionBean.context.customer.sales}">
 			<c:forEach var="item" items="${sale.items}">
+			<div class="bookItem">
+				<img src="${item.book.imageUrl }" />
+				<div>
 				<p>${item.book.title }</p>
+				<p>${item.book.author }</p>
 				<s:link beanclass="ie.books.action.ReviewActionBean" >
 					<s:param name="bookId" value="${item.book.id }"/>
 					Review
 				</s:link>
+				</div>
+			</div>
 			</c:forEach>
 		</c:forEach>
 	</s:layout-component>
