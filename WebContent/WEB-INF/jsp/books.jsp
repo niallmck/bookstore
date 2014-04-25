@@ -54,13 +54,16 @@
 			
 		</div>
 		<div id="books">
-			<h2>${actionBean.category.name}</h2>
+			<h2>${actionBean.pageTitle}</h2>
 			<ul>
 				<c:forEach var="book" items="${actionBean.books}">
 				<li class="book">
 				<s:link beanclass="ie.books.action.BookActionBean" event="viewBook">
 					<s:param name="bookId" value="${book.id }"/>
 					<img src="${book.imageUrl}"/>
+					<c:if test="${book.discountPercentage > 0 }">
+						<span>${book.discountPercentage} % off</span>
+					</c:if>
 					<p>${book.title}</p>
 					<p>by ${book.author}</p>
 					<p>&#8364;${book.displayPrice}</p>

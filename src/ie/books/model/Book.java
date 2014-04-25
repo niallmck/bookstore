@@ -18,6 +18,7 @@ public class Book extends ModelBase {
 	private double price;
 	private String imageUrl;
 	private int stock;
+	private double discountPercentage;
 	
 	
 	@OneToMany(mappedBy="book")
@@ -48,10 +49,14 @@ public class Book extends ModelBase {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-
-
+	
 	public double getPrice() {
-		return price;
+		if(discountPercentage > 0){
+			return price - (price * (discountPercentage / 100));
+		}
+		else{
+			return price;
+		}
 	}
 
 
@@ -77,6 +82,16 @@ public class Book extends ModelBase {
 
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+
+
+	public double getDiscountPercentage() {
+		return discountPercentage;
+	}
+
+
+	public void setDiscountPercentage(double discountPercentage) {
+		this.discountPercentage = discountPercentage;
 	}
 
 
@@ -110,6 +125,10 @@ public class Book extends ModelBase {
 	}
 
 	public String getDisplayPrice(){
+		return String.format("%10.2f", getPrice());
+	}
+	
+	public String getOriginalPrice(){
 		return String.format("%10.2f", price);
 	}
 	
@@ -131,6 +150,12 @@ public class Book extends ModelBase {
 		if (stock > 0){
 			stock--;
 		}
+	}
+
+
+	public void addStock(Integer additionalStock) {
+		stock += additionalStock;
+		
 	}
 	
 

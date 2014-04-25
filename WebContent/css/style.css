@@ -4,20 +4,15 @@ body{
 	padding: 0;
 	background: url('img/bg.jpg');
 	height:100%;
+	background-attachment: fixed;
 }
 
 h1, h2, h3{
 	color: rgba(0,0,0,0.75);
 }
 
-#mainContainer {
-   min-height:100%;
-   position:relative;
-}
-
 #footer {
-   position:absolute;
-   bottom:0;
+	margin-top: 64px;
    width:100%;
    text-align: center;
    height:60px;
@@ -125,7 +120,7 @@ h2{
 }
 #accountSection{
 	float: right;
-	width: 240px;
+	width: 260px;
 	height: 100px;
 }
 #accountSection a{
@@ -141,6 +136,38 @@ h2{
 	text-decoration: none;
 	float: right;
 }
+
+#accountSection #cartIcon{
+	float: left;
+	background: none;
+	height: 32px;
+	width: 32px;	
+	position: relative;
+}
+
+#accountSection #cartIcon img{
+	height: 32px;
+	margin: 0;
+}
+
+#cartIcon span{
+	position: absolute;
+	background: rgba(255,156,0,0.5);
+	padding: 4px;
+	margin: 0;
+	line-height: 20px;
+	border-radius: 36px;
+	width: 20px;
+	height: 20px;
+	top: -12;
+	right: -14;
+	color: #fff;
+}
+
+#cartIcon span:hover{
+	color: #fff;
+}
+
 #signUp, #myAccount{
 	border-radius: 4px 0 0 4px;
 	border-right: 1px solid #666;
@@ -203,6 +230,7 @@ h2{
 }
 
 #books li{
+	position: relative;
 	display: inline-block;
 	width: 164px;
 	background: rgba(0,0,0,0.25);
@@ -231,8 +259,23 @@ h2{
 	opacity: 0.75;
 }
 
+.book span{
+	width: 60%;
+	margin: 20%;
+	position: absolute;
+	top: 89px;
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	text-align: center;
+	background: rgba(255, 0, 0, 0.65);
+	color: rgba(255,255,255, 0.95);
+	font-weight: bold;
+	padding: 8px 0;
+}
+
 #promoSidebar{
-	float: right;
+	display: inline-block;
 	min-height: 320px;
 	width: 180px;
 	background: rgba(0,0,0,0.5);
@@ -286,6 +329,11 @@ h2{
 	margin-bottom: 0px;
 	padding-bottom: 2px;
 	border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+#bookDetails h3 span{
+	font-size: 0.9em;
+	color: rgba(220, 0, 0, 0.95);
 }
 
 #bookDetails a{
@@ -505,4 +553,80 @@ h2{
 	width: 50px;
 	display: inline-block;
 	text-align: center;
+}
+
+
+#promoSidebar h3{
+	color: rgba(255,255,255,0.75);
+	text-align: center;
+	margin-top: 16px;
+	margin-bottom: 0;
+	font-weight: normal;
+
+}
+
+
+.promoLink{
+	width: 100%;
+	position: relative;
+}
+
+
+.promoLink img{
+	width: 80%;
+	margin: 10%;
+}
+
+.promoLink span{
+	width: 80%;
+	margin: 10%;
+	position: absolute;
+	bottom: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	text-align: center;
+	background: rgba(255, 0, 0, 0.65);
+	color: rgba(255,255,255, 0.95);
+	font-weight: bold;
+	padding: 8px 0;
+}
+
+.promoLink:hover{
+	opacity: 0.75;
+}
+
+
+#content input[type="submit"]{
+	display: block;
+	height: 36px;
+	color: #fff;
+	padding: 0 16px;
+	text-align: center;
+	background: #fe9b0e;
+	text-decoration: none;
+	border-radius: 4px;
+	margin-top: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+#content input[type="submit"]:hover{
+	background: #dc8100;
+}
+
+
+#content input[type="text"], #content select, #content input[type="password"] {
+	height: 32px;
+	line-height: 32px;
+	padding: 4px;
+	border-radius: 4px;
+	border: 1px solid #999;
+	min-width: 160px;
+}
+
+#content label{
+	margin-top: 32px;
+	margin-bottom: 8px;
+	margin-left: 4px;
 }

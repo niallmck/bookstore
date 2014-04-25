@@ -1,6 +1,9 @@
 package ie.books.action;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +25,7 @@ import ie.books.dao.impl.stripersist.SaleDaoImpl;
 import ie.books.dao.impl.stripersist.SaleItemDaoImpl;
 import ie.books.dao.impl.stripersist.ShoppingCartItemDaoImpl;
 import ie.books.ext.MyActionBeanContext;
+import ie.books.model.Book;
 import ie.books.model.Customer;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
@@ -82,6 +86,20 @@ public abstract class BaseActionBean implements ActionBean {
         sb.deleteCharAt(sb.length() - 1);
 
         return sb.toString();
+    }
+    
+    
+    public List<Book> getDiscountedBooks(){
+    	List<Book> books =  bookDao.getDiscountedBooks();
+    	Collections.shuffle(books);
+    	
+    	
+    	List<Book> randomBooks = new ArrayList<Book>();
+    	for (int i = 0; i < 3 && i < books.size(); i++){
+    		randomBooks.add(books.get(i));
+    	}
+    	
+    	return randomBooks;
     }
 }
 

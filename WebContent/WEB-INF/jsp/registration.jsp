@@ -25,8 +25,7 @@
 			<s:label for="customer.address">Address</s:label>
 			<s:text name="customer.address" value="g"/>
 			<br>
-			<s:submit name="register" value="Continue"/>
-            <s:submit name="cancel" value="Cancel"/>
+			<s:submit name="register" value="Sign Up"/>
 		</s:form>
 	</s:layout-component>
 </s:layout-render>

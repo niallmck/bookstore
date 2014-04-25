@@ -17,7 +17,7 @@
 		</div>
 		
 		<div id="sales">
-			<c:forEach var="sale" items="${actionBean.customer.sales}">
+			<c:forEach var="sale" items="${actionBean.customer.salesByDate}">
 				<div class="sale">
 					<h4>Sale ID: ${sale.id } <span>Date: ${sale.purchaseDate }</span></h4>
 					

@@ -10,7 +10,14 @@
 		<span>Title</span>
 		<h3>${actionBean.bookDetails.author}</h3>
 		<span>Author</span>
-		<h3>&#8364;${actionBean.bookDetails.displayPrice}</h3>
+		<h3>&#8364;${actionBean.bookDetails.displayPrice}
+		
+		<c:if test="${actionBean.bookDetails.discountPercentage > 0 }">
+		<span>(${actionBean.bookDetails.discountPercentage} % off - Was &#8364;${actionBean.bookDetails.originalPrice})</span>
+			 
+		</c:if>
+		
+		</h3>
 		<span>Price</span>
 		<h3>${actionBean.bookDetails.averageRating}</h3>
 		<span>Average Rating</span>

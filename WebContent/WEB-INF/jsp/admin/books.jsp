@@ -56,7 +56,7 @@
 			
 		</div>
 		<div id="books">
-			<h2>${actionBean.category.name}</h2>
+			<h2>${actionBean.pageTitle}</h2>
 			<ul>
 				<c:forEach var="book" items="${actionBean.books}">
 				<li class="book">

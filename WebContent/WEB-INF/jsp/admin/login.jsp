@@ -1,9 +1,7 @@
 <%@include file="/WEB-INF/jsp/common/taglibs.jsp" %>
 <s:layout-render name="/WEB-INF/jsp/common/main_layout.jsp">
 	<s:layout-component name="sidebar">
-		<ul>
-			<li><a href="">Log In</a></li>
-		</ul>
+		<%@include file="/WEB-INF/jsp/common/login_sidebar.jsp" %>
 	</s:layout-component>
 	<s:layout-component name="content">
 		<s:form beanclass="ie.books.action.AdminLoginActionBean">

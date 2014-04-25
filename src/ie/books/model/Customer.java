@@ -1,6 +1,8 @@
 package ie.books.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
@@ -17,7 +19,7 @@ public class Customer extends ModelBase {
 	private String address;
 	
 	@OneToMany(mappedBy="customer")
-	private Set<Sale> sales;
+	private List<Sale> sales;
 	
 	@OneToMany(mappedBy="customer")
 	private Set<Review> reviews;
@@ -58,10 +60,10 @@ public class Customer extends ModelBase {
 	}
 	
 	
-	public Set<Sale> getSales() {
+	public List<Sale> getSales() {
 		return sales;
 	}
-	public void setSales(Set<Sale> sales) {
+	public void setSales(List<Sale> sales) {
 		this.sales = sales;
 	}
 	public Set<Review> getReviews() {
@@ -99,6 +101,16 @@ public class Customer extends ModelBase {
     		total += cartItem.getQuantity() * cartItem.getBook().getPrice();
     	}
     	return String.format("%10.2f", total);
+	}
+	
+	public List<Sale> getSalesByDate(){
+		Collections.sort(sales, new Comparator<Sale>() {
+		    public int compare(Sale s1, Sale s2) {
+		        return s1.getPurchaseDate().compareTo(s2.getPurchaseDate());
+		    }
+		});
+		Collections.reverse(sales);
+		return sales;
 	}
 	
 	@Override

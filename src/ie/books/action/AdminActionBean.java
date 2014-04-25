@@ -59,11 +59,13 @@ public class AdminActionBean extends BaseActionBean{
 	}
 	
 	public Resolution books(){
-		if (getCategory() != null){
+		if (categoryId != null){
     		books = getCategory().getBooks();
+    		setPageTitle(getCategory().getName());
     	}
     	else{
     		books = bookDao.read();
+    		setPageTitle("All Books");
     	}
     	if (sortBy != null){
     		sortBooks(books);
@@ -72,6 +74,17 @@ public class AdminActionBean extends BaseActionBean{
 	}
 	
 	public Resolution manageBook(){
+		return forward(MANAGE_BOOK);
+	}
+	public Resolution addStock(){
+		getBook().addStock(additionalStock);
+		bookDao.commit();
+		return forward(MANAGE_BOOK);
+	}
+	
+	public Resolution applyDiscount(){
+		getBook().setDiscountPercentage(discount);;
+		bookDao.commit();
 		return forward(MANAGE_BOOK);
 	}
 	public List<Customer> getCustomers(){
@@ -95,7 +108,9 @@ public class AdminActionBean extends BaseActionBean{
 	}
 	
 	public Category getCategory(){
-		return categoryDao.read(categoryId);
+		if (categoryId != null)
+			return categoryDao.read(categoryId);
+		return null;
 	}
 	
 	private List<Book> books;
@@ -147,5 +162,27 @@ public class AdminActionBean extends BaseActionBean{
     
     public Book getBook(){
     	return bookDao.read(bookId);
+    }
+    
+    private Integer additionalStock;
+    
+    public void setAdditionalStock(Integer amount){
+    	additionalStock = amount;
+    }
+    
+    private double discount;
+    
+    public void setDiscount(double amount){
+    	discount = amount;
+    }
+    
+    private String pageTitle;
+    
+    public String getPageTitle(){
+    	return pageTitle;
+    }
+    
+    public void setPageTitle(String title){
+    	pageTitle = title;
     }
 }

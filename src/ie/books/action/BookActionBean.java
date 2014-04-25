@@ -36,16 +36,17 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	
     	// If a category is specified, only get books from that category.
     	// Otherwise, get all books.
-    	if (getCategory() != null){
+    	if (categoryId != null){
     		books = getCategory().getBooks();
+    		setPageTitle(getCategory().getName());
     	}
     	else{
+    		setPageTitle("All Books");
     		books = bookDao.read();
     	}
     	if (sortBy != null){
     		sortBooks(books);
     	}
-      	
     	
         return new ForwardResolution(VIEW);
     }
@@ -60,6 +61,24 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
 	    	sortBooks(titleBooks);
     	}
     	return new ForwardResolution(SEARCH_RESULTS);
+    }
+    
+    @DontValidate
+    public Resolution promotions(){
+    	setPageTitle("Promotions");
+    	
+    	books = bookDao.getDiscountedBooks();
+    	
+    	return new ForwardResolution(VIEW);
+    }
+    
+    @DontValidate
+    public Resolution bestSellers(){
+    	setPageTitle("Best Selling Books");
+    	
+    	books = bookDao.getBestSellingBooks();
+    	
+    	return new ForwardResolution(VIEW);
     }
     
     public void sortBooks(List<Book> books){
@@ -171,14 +190,16 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	return titleBooks;
     }
     
-    private int categoryId;
+    private Integer categoryId;
     
-    public void setCategoryId(int id){
+    public void setCategoryId(Integer id){
     	categoryId = id;
     }
     
     public Category getCategory(){
-    	return categoryDao.read(categoryId);
+    	if (categoryId != null)
+			return categoryDao.read(categoryId);
+		return null;
     }
     
     private String searchTerm;
@@ -189,6 +210,16 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     
     public String getSearchTerm(){
     	return searchTerm;
+    }
+    
+    private String pageTitle;
+    
+    public String getPageTitle(){
+    	return pageTitle;
+    }
+    
+    public void setPageTitle(String title){
+    	pageTitle = title;
     }
 
     @Override
