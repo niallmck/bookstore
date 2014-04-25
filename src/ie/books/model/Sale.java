@@ -47,6 +47,13 @@ public class Sale extends ModelBase{
 		items.add(item);
 	}
 	
+	public String getTotal(){
+		double total = 0;
+		for (SaleItem item: items){
+			total += item.getUnitPrice() * item.getQuantity();
+		}
+		return String.format("%10.2f", total);
+	}
 	
 
 }

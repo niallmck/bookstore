@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 public class SaleItem extends ModelBase{
 	
 	private double unitPrice;
-	private int quanitity;
+	private int quantity;
 	
 	@ManyToOne
 	private Sale sale;
@@ -23,12 +23,12 @@ public class SaleItem extends ModelBase{
 		this.unitPrice = unitPrice;
 	}
 
-	public int getQuanitity() {
-		return quanitity;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setQuanitity(int quanitity) {
-		this.quanitity = quanitity;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Sale getSale() {
@@ -47,6 +47,10 @@ public class SaleItem extends ModelBase{
 		this.book = book;
 	}
 	
+	
+	public String getDisplayPrice(){
+		return String.format("%10.2f", unitPrice);
+	}
 	
 
 }

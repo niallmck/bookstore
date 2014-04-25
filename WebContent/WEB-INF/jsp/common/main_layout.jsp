@@ -15,11 +15,10 @@
 			<div id="headerContent">
 			<a href="/Books/"><img src="/Books/css/img/logo.png" alt="books.ie"/></a>
 	
-			<div id="searchBar">
-				<form action="" method="post">
-					<input type="text" name="searchTerm" /><input type="submit" name="submit" value="Search"/>
-					<br>
-				</form>
+			<div id="searchBar">			
+				<s:form beanclass="ie.books.action.BookActionBean">
+					<s:text name="searchTerm"/><s:submit name="search" value="Search"/>
+				</s:form>
 			</div>
 	
 			<div id="accountSection">
@@ -52,6 +51,7 @@
 					<li><a href="">Promotions</a></li>
 				</ul>
 				<ul>
+					<li><s:link beanclass="ie.books.action.BookActionBean">All Books</s:link></li>
 					<c:forEach var="category" items="${categoryBean.categories}">
 						<li>
 						<s:link beanclass="ie.books.action.BookActionBean">

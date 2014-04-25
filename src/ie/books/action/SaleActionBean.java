@@ -34,13 +34,16 @@ public class SaleActionBean extends BaseActionBean {
     	for (ShoppingCartItem cartItem: cart){
     		SaleItem saleItem = new SaleItem();
     		saleItem.setBook(cartItem.getBook());
-    		saleItem.setQuanitity(cartItem.getQuantity());
+    		saleItem.setQuantity(cartItem.getQuantity());
     		saleItem.setUnitPrice(cartItem.getBook().getPrice());
     		saleItem.setSale(sale);
     		
     		saleItems.add(saleItem);
     		
     		saleItemDao.save(saleItem);
+    		
+    		cartItem.getBook().decrementStock();
+    		bookDao.save(cartItem.getBook());
     		
     	}
     	
@@ -49,6 +52,7 @@ public class SaleActionBean extends BaseActionBean {
     	saleDao.save(sale);
     	saleItemDao.commit();
     	saleDao.commit();
+    	bookDao.commit();
     	
         return new ForwardResolution(VIEW);
     }

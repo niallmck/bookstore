@@ -10,7 +10,7 @@
 		<span>Title</span>
 		<h3>${actionBean.bookDetails.author}</h3>
 		<span>Author</span>
-		<h3>${actionBean.bookDetails.displayPrice}</h3>
+		<h3>&#8364;${actionBean.bookDetails.displayPrice}</h3>
 		<span>Price</span>
 		<h3>${actionBean.bookDetails.averageRating}</h3>
 		<span>Average Rating</span>

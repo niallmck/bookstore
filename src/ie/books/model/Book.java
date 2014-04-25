@@ -127,6 +127,12 @@ public class Book extends ModelBase {
 		}
 	}
 	
+	public void decrementStock(){
+		if (stock > 0){
+			stock--;
+		}
+	}
+	
 
 	
 }

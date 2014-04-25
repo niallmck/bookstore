@@ -87,11 +87,11 @@ h2{
 
 #searchBar{
 	float: left;
+	margin-top: 32px;
 }
 
 #searchBar form{
 	margin: 0;
-	line-height: 100px;
 }
 
 #searchBar input[type=text]{
@@ -377,4 +377,132 @@ h2{
 
 #sortBar p:nth-child(3){
 	margin-right: 0;
+}
+
+.searchTerm{
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 32px;
+}
+
+#books > h2{
+	margin-top: 32px;
+}
+
+
+.cartButton{
+	display: inline;
+	margin-top: 16px;
+	color: #fff;
+	padding: 8px;
+	text-align: center;
+	background: #fe9b0e;
+	text-decoration: none;
+	border-radius: 4px;
+}
+
+.cartButton:hover{
+	background: #dc8100;
+}
+
+#cartTotal{
+	text-align: right;
+}
+
+#customers{
+	padding: 0;
+}
+
+#customers li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 3px;
+	display: inline-block;
+}
+
+#customers li:nth-child(2){
+	margin-right: 0;
+
+}
+
+#customers a{
+	width: 256px;
+	line-height: 36px;
+	height: 36px;
+	color: rgba(255,255,255,0.95);
+	background: rgba(0,0,0,0.65);
+	text-decoration: none;
+	display: block;
+	padding-left: 8px;
+}
+
+#customers a:hover{
+	background: rgba(0,0,0,0.75);
+	color: #ff9c00;
+}
+
+
+#customerDetails h2{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#customerDetails span{
+	margin-top: 0;
+	padding-top: 0; 
+	margin-bottom: 16px;
+	color: rgba(0,0,0,0.5);
+	display: block;
+}
+
+.sale{
+	margin: 32px 0;
+}
+
+.sale h4{
+	margin-bottom: 4px;
+	padding: 4px;
+	background: rgba(0,0,0,0.45);
+	color: rgba(255,255,255,0.65);
+	font-weight: normal;
+}
+
+.sale h4 span{
+	display: inline-block;
+	float: right;
+}
+
+.sale > span{
+	height: 24px;
+	line-height: 24px;
+	color: rgba(0,0,0,0.95);
+	background: rgba(0,0,0,0.1);
+	padding: 4px;
+	width: 100px;
+	width: 50px;
+	display: inline-block;
+	text-align: center;
+}
+
+.sale .title{
+	width: 340px;
+	text-align: left;
+}
+
+.total{
+	text-align: right;
+	margin-top: 3px;
+}
+
+.total span{
+	height: 24px;
+	line-height: 24px;
+	color: rgba(0,0,0,0.95);
+	background: rgba(0,0,0,0.1);
+	padding: 4px;
+	width: 100px;
+	width: 50px;
+	display: inline-block;
+	text-align: center;
 }

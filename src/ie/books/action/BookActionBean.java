@@ -42,35 +42,41 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	else{
     		books = bookDao.read();
     	}
-    	
-    	sortBooks();
+    	if (sortBy != null){
+    		sortBooks(books);
+    	}
       	
     	
         return new ForwardResolution(VIEW);
     }
     
+    @DontValidate
     public Resolution search(){
     	authorBooks = bookDao.searchAuthor(searchTerm);
+    	titleBooks = bookDao.searchTitle(searchTerm);
+    	
+    	if (sortBy != null){
+	    	sortBooks(authorBooks);
+	    	sortBooks(titleBooks);
+    	}
     	return new ForwardResolution(SEARCH_RESULTS);
     }
     
-    public void sortBooks(){
+    public void sortBooks(List<Book> books){
     	// If the user has specified a sort order, use the relevant comparator
     	// to sort the list of books.
-    	if (sortBy != null){
-    		switch(sortBy){
-    		case AUTHOR:
-    			Collections.sort(books, new BookAuthorComparator());
-    			break;
-    		case PRICE:
-    			Collections.sort(books, new BookPriceComparator());
-    			break;
-    		case TITLE:
-    			Collections.sort(books, new BookTitleComparator());
-    			break;
-    		default:
-    			break;
-    		}
+		switch(sortBy){
+		case AUTHOR:
+			Collections.sort(books, new BookAuthorComparator());
+			break;
+		case PRICE:
+			Collections.sort(books, new BookPriceComparator());
+			break;
+		case TITLE:
+			Collections.sort(books, new BookTitleComparator());
+			break;
+		default:
+			break;
     	}
     	
     	// If reverse order is specified, reserved the book list.
@@ -159,6 +165,12 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     	return authorBooks;
     }
     
+    private List<Book> titleBooks;
+    
+    public List<Book> getTitleBooks(){
+    	return titleBooks;
+    }
+    
     private int categoryId;
     
     public void setCategoryId(int id){
@@ -173,6 +185,10 @@ public class BookActionBean extends BaseActionBean implements ValidationErrorHan
     
     public void setSearchTerm(String searchTerm){
     	this.searchTerm = searchTerm;
+    }
+    
+    public String getSearchTerm(){
+    	return searchTerm;
     }
 
     @Override

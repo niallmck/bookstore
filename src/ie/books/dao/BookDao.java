@@ -10,6 +10,8 @@ public interface BookDao extends Dao<Book,Integer>{
 	
 	public List<Book> searchAuthor(String author);
 	
+	public List<Book> searchTitle(String title);
+	
 	
 
 }

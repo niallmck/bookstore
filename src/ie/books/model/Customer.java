@@ -1,5 +1,6 @@
 package ie.books.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -90,6 +91,14 @@ public class Customer extends ModelBase {
 	
 	public String getFullName(){
 		return firstName + " " + lastName;
+	}
+	
+	public String getCartTotal(){
+		double total = 0;
+    	for (ShoppingCartItem cartItem: shoppingCart){   		
+    		total += cartItem.getQuantity() * cartItem.getBook().getPrice();
+    	}
+    	return String.format("%10.2f", total);
 	}
 	
 	@Override

@@ -7,6 +7,7 @@ import ie.books.model.ShoppingCartItem;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.DontValidate;
 import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 
 public class ShoppingCartActionBean extends BaseActionBean {
@@ -37,7 +38,7 @@ public class ShoppingCartActionBean extends BaseActionBean {
 			shoppingCartItemDao.save(item);
 			shoppingCartItemDao.commit();
 			customerDao.commit();
-		}		
+		}
 		return new ForwardResolution(VIEW);
 	}
 	
@@ -49,7 +50,7 @@ public class ShoppingCartActionBean extends BaseActionBean {
 				customerDao.commit();
 			}
 		}
-		return new ForwardResolution(VIEW);
+		return new RedirectResolution(ShoppingCartActionBean.class, "view");
 	}
 	
 	public Resolution emptyCart(){
