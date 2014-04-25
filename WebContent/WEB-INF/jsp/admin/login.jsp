@@ -7,10 +7,10 @@
 		<s:form beanclass="ie.books.action.AdminLoginActionBean">
 			<h2>Log In</h2>
 			<s:label for="email">Email</s:label>
-			<s:text name="email" value="admin@books.ie"/>
+			<s:text name="email"/>
 			
 			<s:label for="password">Password</s:label>
-			<s:password name="password" value="admin"/>
+			<s:password name="password"/>
 					<br>
 			<s:submit name="login" value="Log In"/>
 		</s:form>

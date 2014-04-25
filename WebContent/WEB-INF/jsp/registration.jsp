@@ -8,22 +8,22 @@
 			<h2>Register an Account!</h2>
 			<p>To join Books.ie fill in your details below.</p>
 			<s:label for="customer.firstName">First Name</s:label>
-			<s:text name="customer.firstName" value="g"/>
+			<s:text name="customer.firstName"/>
 			
 			<s:label for="customer.lastName">Last Name</s:label>
-			<s:text name="customer.lastName" value="g"/>
+			<s:text name="customer.lastName"/>
 			
 			<s:label for="customer.email">Email</s:label>
-			<s:text name="customer.email" value="g"/>
+			<s:text name="customer.email"/>
 			
 			<s:label for="customer.password">Password</s:label>
-			<s:password name="customer.password" value="g"/>
+			<s:password name="customer.password"/>
 			
 			<s:label for="confirmPassword">Confirm Password</s:label>
-			<s:password name="confirmPassword" value="g"/>
+			<s:password name="confirmPassword"/>
 			
 			<s:label for="customer.address">Address</s:label>
-			<s:text name="customer.address" value="g"/>
+			<s:text name="customer.address"/>
 			<br>
 			<s:submit name="register" value="Sign Up"/>
 		</s:form>
